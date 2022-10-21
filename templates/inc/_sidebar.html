@@ -1,0 +1,17 @@
+{% load news_tags %}
+{% block category %}
+{% show_categories %}
+{% endblock %}
+
+{#<div class="list-group">#}
+{#    <h5 class="list-group-item">#}
+{#        Категории#}
+{#    </h5>#}
+{#{% get_list_categories as categories %}#}
+{#    {% block category %}#}
+{#        {% for item in categories %}#}
+{#            <a href="{% url 'category' item.pk %}"#}
+{#               class="list-group-item list-group-item-action">{{ item.title }}</a>#}
+{#        {% endfor %}#}
+{#    {% endblock %}#}
+{#</div>#}

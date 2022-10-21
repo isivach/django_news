@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}{{ news_item.title }}{% endblock %}
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+            <div class="card mb-3">
+                <h5 class="card-header">
+                    Категория: <a href="{{ news_item.get_absolute_url }}">{{ news_item.category }}</a>
+                </h5>
+                <div class="card-body">
+                    <div class="media">
+                        {% if news_item.photo %}
+                            <img src="{{ news_item.photo.url }}" alt="" width="350" class="mr-3">
+                        {% else %}
+                            <img src="https://i.simpalsmedia.com/point.md/news/thumbnails/large/12acf4db8a560f7eacb17e2ddecc522f.jpg"
+                                 alt="" width="350" class="mr-3">
+                        {% endif %}
+                        <div class="media-body">
+                            <h5 class="card-title">{{ news_item.title }}</h5>
+                            <p class="card-text">{{ news_item.content|safe|linebreaks }}</p>
+{#                            <a href="#" class="btn btn-primary">Read more...</a>#}
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    {{ news_item.created_at|date:"Y-m-d H:i:s" }}
+                </div>
+            </div>
+{% endblock %}
