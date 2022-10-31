@@ -1,1 +1,1 @@
-# django_news
+# News portal
